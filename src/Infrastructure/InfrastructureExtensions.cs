@@ -4,6 +4,7 @@ using Application.Services;
 using Infrastructure.Persistence;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,6 +21,12 @@ namespace Infrastructure
                 .AddScoped<IDataContext>(provider => provider.GetService<InMemoryDataContext>())
                 //
                 .AddScoped<IEventDispatcherService, EventDispatcherService>()
+                //
+                .AddStackExchangeRedisCache(options =>
+                {
+                    options.Configuration = "localhost:6379";
+                })
+                .AddScoped<ICacheService, CacheServiceRedis>()
                 ;
 
             return services;

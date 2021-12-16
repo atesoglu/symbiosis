@@ -9,84 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc9eacbf-6ecc-42f3-8a4c-578b55021c7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Symbiosis.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Symbiosis.sln.DotSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/API.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Controllers/@Base/ApiControllerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Controllers/FindUserByEmailController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/HealthCheck/HealthChecksBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Middlewares/ExceptionMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/appsettings.Production.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/appsettings.Staging.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/API/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/ApplicationExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Events/@Base/Event.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Events/@Base/EventBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Events/User/UserSignedInEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Events/User/UserSignedOffEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Events/User/UserSignedUpEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/@Base/ExceptionBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/BadRequestException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/ConflictException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/InternalServerException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/NotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/UnauthorizedException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Exceptions/ValidationException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Models/@Base/ObjectModelBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Models/UserObjectModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Persistence/IDataContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Request/IRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Request/IRequestBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Request/IRequestHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Request/Request.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Services/IEventDispatcherService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Models/@Base/ModelBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Models/UserModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContextExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Response/AuthenticationResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Response/ErrorResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Response/HealthCheckResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Response/IErrorResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Response/IResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Response/ResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Services/EventDispatcherService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/API.IntegrationTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/Controllers/FilterLocationsControllerShould.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/ServicesFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/appsettings.Test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/Application.IntegrationTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/Services/EmptyEventDispatcherService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/ServicesFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/appsettings.Test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Application.UnitTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Exceptions/BadRequestExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Exceptions/ValidationExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Models/UserObjectModelTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Domain.UnitTests/Domain.UnitTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Domain.UnitTests/Models/UserModelTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailCommandShould.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailHandlerShould.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailValidatorShould.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/ServicesFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/appsettings.Test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Services/ICacheService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Services/CacheServiceRedis.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Services/CacheServiceRedisShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Symbiosis.sln.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Symbiosis.sln.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +33,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a66b026fecec4a01ce5879f32d016d32be10b16d12ec4ceb8036427e225884/AssertionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f6461121e72d40b499e82c568c984ddf5b2bac4f238c0656b6d95145d33362/GenericDictionaryAssertions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a94d12faeb777b69bda5e4bbc5e0b5718eb82556fc449218d211c48b32d915/IDistributedCache.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -167,6 +97,10 @@
       <workItem from="1639405782741" duration="240000" />
       <workItem from="1639406051663" duration="12000" />
       <workItem from="1639406133849" duration="8654000" />
+      <workItem from="1639417150743" duration="2652000" />
+      <workItem from="1639427977800" duration="2616000" />
+      <workItem from="1639435270350" duration="595000" />
+      <workItem from="1639497590428" duration="1211000" />
     </task>
     <servers />
   </component>
