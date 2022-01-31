@@ -4,8 +4,10 @@ using Application.Services;
 using Infrastructure.Persistence;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 
 namespace Infrastructure
 {
@@ -21,6 +23,25 @@ namespace Infrastructure
                 //
                 .AddScoped<IEventDispatcherService, EventDispatcherService>()
                 ;
+
+            switch (configuration["Cache:Type"])
+            {
+                case "Redis":
+                    services
+                        .AddStackExchangeRedisCache(options => options.ConfigurationOptions = new ConfigurationOptions
+                        {
+                            EndPoints = {{configuration["Cache:Redis:Host"], int.Parse(configuration["Cache:Redis:Port"])}},
+                            Password = configuration["Cache:Redis:Password"],
+                            DefaultDatabase = string.IsNullOrEmpty(configuration["Cache:Redis:DatabaseId"]) ? null : int.Parse(configuration["Cache:Redis:DatabaseId"])
+                        })
+                        .AddScoped<ICacheService, CacheServiceRedis>();
+                    break;
+                default: //or InMemory
+                {
+                    services.AddScoped<ICacheService, CacheServiceInMemory>();
+                    break;
+                }
+            }
 
             return services;
         }
