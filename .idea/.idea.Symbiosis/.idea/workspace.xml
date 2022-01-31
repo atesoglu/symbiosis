@@ -12,15 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc9eacbf-6ecc-42f3-8a4c-578b55021c7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Services/CacheServiceInMemory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/API.IntegrationTests/API.IntegrationTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/API.IntegrationTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.IntegrationTests/Application.IntegrationTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/Application.IntegrationTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.UnitTests/Application.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Application.UnitTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Domain.UnitTests/Domain.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Domain.UnitTests/Domain.UnitTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/appsettings.Test.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/appsettings.Test.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +30,12 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1bc432863f7d8dc02e4896211c50d57751bac77a4814f45ba3d339268783/ConfigurationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/487c158e8cb5a321b9b98cd2b78b67bb9a66722f7e969267c076b0d796caa6/RedisCacheOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a94d12faeb777b69bda5e4bbc5e0b5718eb82556fc449218d211c48b32d915/IDistributedCache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f360779027ab17e5e4e3fd5265f4d517a2cb87478614dec7899e899423040/StackExchangeRedisCacheServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,6 +124,7 @@
       <workItem from="1639435270350" duration="595000" />
       <workItem from="1639497590428" duration="1211000" />
       <workItem from="1643644925329" duration="2211000" />
+      <workItem from="1643651379376" duration="1958000" />
     </task>
     <servers />
   </component>
