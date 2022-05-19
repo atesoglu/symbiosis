@@ -1,5 +1,6 @@
 ﻿using Application.Flows.Users.Queries;
 using Application.Models;
+using Application.Models.Authentication;
 using Application.Request;
 using FluentValidation;
 using Microsoft.Extensions.Configuration;
@@ -13,10 +14,11 @@ namespace Application
         {
             services
                 .AddMemoryCache()
+                .AddSingleton<JwtSettings>(_ => new JwtSettings {Key = configuration["Jwt:Key"], Issuer = configuration["Jwt:Issuer"], Audience = configuration["Jwt:Audience"]})
                 //
                 // .AddTransient<IRequestHandler<CreateTokenCommand, TokenObjectModel>, CreateTokenHandler>().AddTransient<IValidator<CreateTokenCommand>, CreateTokenValidator>()
                 //
-                .AddTransient<IRequestHandler<FindUserByEmailCommand, UserObjectModel>, FindUserByEmailHandler>().AddTransient<IValidator<FindUserByEmailCommand>, FilterLocationsValidator>()
+                .AddTransient<IRequestHandler<FindUserByEmailCommand, UserObjectModel>, FindUserByEmailHandler>().AddTransient<IValidator<FindUserByEmailCommand>, FindUserByEmailValidator>()
                 //
                 ;
 

@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Application.Flows.Users.Queries
 {
-    public class FilterLocationsValidator : AbstractValidator<FindUserByEmailCommand>
+    public class FindUserByEmailValidator : AbstractValidator<FindUserByEmailCommand>
     {
-        public FilterLocationsValidator()
+        public FindUserByEmailValidator()
         {
             RuleFor(t => t.Email)
                 .NotEmpty().WithMessage("{PropertyName} is required.")

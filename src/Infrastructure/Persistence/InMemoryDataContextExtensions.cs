@@ -33,7 +33,7 @@ namespace Infrastructure.Persistence
 
             var count = dbContext.Users.Count();
             var elapsed = stopWatch.ElapsedMilliseconds / 1000m;
-            logger.LogInformation("There are total {count} locations persisted in database. Time elapsed: {elapsed} seconds.", count, elapsed);
+            logger.LogInformation("There are total {count} users persisted in database. Time elapsed: {elapsed} seconds.", count, elapsed);
         }
     }
 }

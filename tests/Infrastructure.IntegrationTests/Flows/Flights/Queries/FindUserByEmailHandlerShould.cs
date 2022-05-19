@@ -13,11 +13,11 @@ using Xunit;
 
 namespace Infrastructure.IntegrationTests.Flows.Flights.Queries
 {
-    public class FilterLocationsHandlerShould : IClassFixture<ServicesFixture>
+    public class FindUserByEmailHandlerShould : IClassFixture<ServicesFixture>
     {
         private readonly IRequestHandler<FindUserByEmailCommand, UserObjectModel> _handler;
 
-        public FilterLocationsHandlerShould(ServicesFixture fixture)
+        public FindUserByEmailHandlerShould(ServicesFixture fixture)
         {
             _handler = fixture.ServiceProvider.GetRequiredService<IRequestHandler<FindUserByEmailCommand, UserObjectModel>>();
             fixture.ServiceProvider.GetRequiredService<IDataContext>().SeedData(fixture.ServiceProvider.GetRequiredService<ILogger<ServicesFixture>>());

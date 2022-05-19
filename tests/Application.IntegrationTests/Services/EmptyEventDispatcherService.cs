@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Application.Events.Base;
 using Application.Services;
+using Application.Services.EventDispatcher;
 
 namespace Application.IntegrationTests.Services
 {

@@ -1,10 +1,13 @@
 ﻿using Application;
 using Application.Persistence;
-using Application.Services;
+using Application.Services.Authentication;
+using Application.Services.Cache;
+using Application.Services.EventDispatcher;
 using Infrastructure.Persistence;
-using Infrastructure.Services;
+using Infrastructure.Services.Authentication;
+using Infrastructure.Services.Cache;
+using Infrastructure.Services.EventDispatcher;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
@@ -22,6 +25,7 @@ namespace Infrastructure
                 .AddScoped<IDataContext>(provider => provider.GetService<InMemoryDataContext>())
                 //
                 .AddScoped<IEventDispatcherService, EventDispatcherService>()
+                .AddTransient<ITokenService, TokenService>()
                 ;
 
             switch (configuration["Cache:Type"])

@@ -1,8 +1,6 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Application.Events.Base;
+﻿using Application.Events.Base;
 
-namespace Application.Services
+namespace Application.Services.EventDispatcher
 {
     /// <summary>
     /// Event dispatcher service to send events to 3rd parties.

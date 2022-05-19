@@ -6,13 +6,13 @@ using Xunit;
 
 namespace Infrastructure.IntegrationTests.Flows.Flights.Queries
 {
-    public class FilterLocationsValidatorShould
+    public class FindUserByEmailValidatorShould
     {
-        private readonly FilterLocationsValidator _validator;
+        private readonly FindUserByEmailValidator _validator;
 
-        public FilterLocationsValidatorShould()
+        public FindUserByEmailValidatorShould()
         {
-            _validator = new FilterLocationsValidator();
+            _validator = new FindUserByEmailValidator();
         }
 
         [Fact]

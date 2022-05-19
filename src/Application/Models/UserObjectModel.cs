@@ -8,7 +8,7 @@ namespace Application.Models
     {
         public int UserId { get; set; }
 
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
 
         public UserObjectModel()
         {
@@ -21,9 +21,6 @@ namespace Application.Models
 
         public sealed override void AssignFrom(UserModel entity)
         {
-            if (entity == null)
-                return;
-
             UserId = entity.UserId;
             Email = entity.Email;
         }

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Infrastructure.IntegrationTests.Flows.Flights.Queries
 {
-    public class FilterLocationsCommandShould
+    public class FindUserByEmailCommandShould
     {
         [Fact]
         public void ToStringSerializedAsJson()

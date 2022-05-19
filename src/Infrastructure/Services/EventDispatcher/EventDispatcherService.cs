@@ -1,10 +1,8 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Application.Events.Base;
-using Application.Services;
+﻿using Application.Events.Base;
+using Application.Services.EventDispatcher;
 using Microsoft.Extensions.Logging;
 
-namespace Infrastructure.Services
+namespace Infrastructure.Services.EventDispatcher
 {
     /// <summary>
     /// Event dispatcher service to send events to 3rd parties.

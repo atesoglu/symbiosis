@@ -10,7 +10,7 @@ namespace Application.Exceptions
     /// </summary>
     public class ValidationException : ExceptionBase
     {
-        public ICollection<KeyValuePair<string, ICollection<string>>> Errors { get; }
+        public ICollection<KeyValuePair<string, ICollection<string>>> Errors { get; } = null!;
 
         /// <summary>
         /// Creates a new instance of ValidationException
@@ -18,6 +18,7 @@ namespace Application.Exceptions
         public ValidationException() : base("One or more validation errors have occurred.")
         {
         }
+
         /// <summary>
         /// Creates a new instance of ValidationException
         /// </summary>

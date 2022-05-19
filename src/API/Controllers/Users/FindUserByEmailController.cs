@@ -5,7 +5,7 @@ using Application.Request;
 using Infrastructure.Response;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace API.Controllers.Users
 {
     public class FindUserByEmailController : ApiControllerBase
     {
@@ -16,7 +16,7 @@ namespace API.Controllers
             _handler = handler;
         }
 
-        [HttpGet("locations")]
+        [HttpGet("users")]
         public async Task<ActionResult<IResponseModel<UserObjectModel>>> FindUserByEmail([FromQuery] FindUserByEmailCommand request, CancellationToken cancellationToken)
         {
             Logger.LogDebug("FindUserByEmail is requested.");

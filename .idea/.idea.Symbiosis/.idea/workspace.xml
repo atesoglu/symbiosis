@@ -12,11 +12,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc9eacbf-6ecc-42f3-8a4c-578b55021c7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Services/CacheServiceInMemory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/API/Controllers/Authentication/AuthenticateUserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Models/Authentication/JwtObjectModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Models/Authentication/JwtSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Services/Authentication/ITokenService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Services/Authentication/TokenService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/Controllers/FindUserByEmailController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Controllers/Users/FindUserByEmailController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/ApplicationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/ApplicationExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/ValidationException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/ValidationException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Models/UserObjectModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Models/UserObjectModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Services/ICacheService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Services/Cache/ICacheService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Services/IEventDispatcherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Services/EventDispatcher/IEventDispatcherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Models/UserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Infrastructure.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/appsettings.Test.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/appsettings.Test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContextExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContextExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Services/CacheServiceInMemory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Services/Cache/CacheServiceInMemory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Services/CacheServiceRedis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Services/Cache/CacheServiceRedis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Services/EventDispatcherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Services/EventDispatcher/EventDispatcherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/API.IntegrationTests/API.IntegrationTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/API.IntegrationTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/API.IntegrationTests/Controllers/FilterLocationsControllerShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/Controllers/FindUserByEmailControllerShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application.IntegrationTests/Application.IntegrationTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/Application.IntegrationTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application.IntegrationTests/Services/EmptyEventDispatcherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/Services/EmptyEventDispatcherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application.IntegrationTests/ServicesFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/ServicesFixture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application.UnitTests/Application.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Application.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Domain.UnitTests/Domain.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Domain.UnitTests/Domain.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailCommandShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailCommandShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailHandlerShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailHandlerShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailValidatorShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailValidatorShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Services/CacheServiceRedisShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Services/CacheServiceRedisShould.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +68,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2e957f92c8e49adb7cea65c17d60ee914568/aa/5811eca0/JwtSecurityTokenHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1bc432863f7d8dc02e4896211c50d57751bac77a4814f45ba3d339268783/ConfigurationOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/487c158e8cb5a321b9b98cd2b78b67bb9a66722f7e969267c076b0d796caa6/RedisCacheOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a94d12faeb777b69bda5e4bbc5e0b5718eb82556fc449218d211c48b32d915/IDistributedCache.cs" root0="SKIP_HIGHLIGHTING" />
@@ -41,21 +78,25 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="22EbdUKfJZu0OrhW6drLySFEo5C" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.API: Development">
     <configuration name="API: Development" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/API/API.csproj" />
@@ -125,6 +166,12 @@
       <workItem from="1639497590428" duration="1211000" />
       <workItem from="1643644925329" duration="2211000" />
       <workItem from="1643651379376" duration="1958000" />
+      <workItem from="1643740666114" duration="598000" />
+      <workItem from="1643910324408" duration="2356000" />
+      <workItem from="1643912719631" duration="3804000" />
+      <workItem from="1647178437423" duration="126000" />
+      <workItem from="1647283302683" duration="113000" />
+      <workItem from="1652957251744" duration="3662000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Models;
 using Application.Services;
+using Application.Services.Cache;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 

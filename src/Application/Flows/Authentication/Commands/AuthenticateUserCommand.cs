@@ -2,11 +2,12 @@
 using Application.Models;
 using Application.Request;
 
-namespace Application.Flows.Users.Queries
+namespace Application.Flows.Authentication.Commands
 {
-    public class FindUserByEmailCommand : Request<UserObjectModel>
+    public class AuthenticateUserCommand : Request<UserObjectModel>
     {
         public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
 
         public override string ToString() => JsonSerializer.Serialize(this);
     }

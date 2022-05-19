@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Application.IntegrationTests.Services;
 using Application.Services;
+using Application.Services.EventDispatcher;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
