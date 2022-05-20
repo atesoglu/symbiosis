@@ -1,20 +1,19 @@
 ﻿using System;
 
-namespace Application.Events.Base
+namespace Application.Events.Base;
+
+public abstract class EventBase
 {
-    public abstract class EventBase
+    public bool IsPublished { get; set; }
+    public DateTimeOffset OccurredAt { get; }
+
+    protected EventBase()
     {
-        public bool IsPublished { get; set; }
-        public DateTimeOffset OccurredAt { get; }
+        OccurredAt = DateTimeOffset.UtcNow;
+    }
 
-        protected EventBase()
-        {
-            OccurredAt = DateTimeOffset.Now;
-        }
-
-        protected EventBase(DateTimeOffset occurredAt)
-        {
-            OccurredAt = occurredAt;
-        }
+    protected EventBase(DateTimeOffset occurredAt)
+    {
+        OccurredAt = occurredAt;
     }
 }

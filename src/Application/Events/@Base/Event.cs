@@ -2,18 +2,17 @@
 using System.Text.Json;
 using Application.Models.Base;
 
-namespace Application.Events.Base
+namespace Application.Events.Base;
+
+public abstract class Event<T> : EventBase
+    where T : ObjectModelBase
 {
-    public abstract class Event<T> : EventBase
-        where T : ObjectModelBase
+    public T Model { get; }
+
+    protected Event(T objectModel, DateTimeOffset occurredAt) : base(occurredAt)
     {
-        public T Model { get; }
-
-        protected Event(T objectModel, DateTimeOffset occurredAt) : base(occurredAt)
-        {
-            Model = objectModel;
-        }
-
-        public override string ToString() => JsonSerializer.Serialize(this);
+        Model = objectModel;
     }
+
+    public override string ToString() => JsonSerializer.Serialize(this);
 }

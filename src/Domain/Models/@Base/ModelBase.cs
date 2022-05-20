@@ -1,9 +1,8 @@
-﻿namespace Domain.Models.Base
+﻿namespace Domain.Models.Base;
+
+/// <summary>
+/// Abstract model base for domain entities.
+/// </summary>
+public abstract class ModelBase
 {
-    /// <summary>
-    /// Abstract model base for domain entities.
-    /// </summary>
-    public abstract class ModelBase
-    {
-    }
 }

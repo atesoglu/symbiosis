@@ -1,7 +1,7 @@
-using Application.Services;
+using Application.Services.Cache;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace Infrastructure.Services;
+namespace Infrastructure.Services.Cache;
 
 public class CacheServiceRedis : ICacheService
 {

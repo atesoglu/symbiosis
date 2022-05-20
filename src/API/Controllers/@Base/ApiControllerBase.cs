@@ -1,16 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers.Base
+namespace API.Controllers.Base;
+
+[ApiController, Authorize]
+public abstract class ApiControllerBase : ControllerBase
 {
-    [ApiController]
-    public abstract class ApiControllerBase : ControllerBase
-    {
-        protected readonly ILogger<ApiControllerBase> Logger;
+    protected readonly ILogger<ApiControllerBase> Logger;
 
-        protected ApiControllerBase(ILogger<ApiControllerBase> logger)
-        {
-            Logger = logger;
-        }
+    protected int UserId => Convert.ToInt32(User.Claims.First(w => w.Type == ClaimTypes.Actor).Value);
+    protected string UserEmail => User.Claims.First(w => w.Type == ClaimTypes.Email).Value;
+
+    protected ApiControllerBase(ILogger<ApiControllerBase> logger)
+    {
+        Logger = logger;
     }
 }
