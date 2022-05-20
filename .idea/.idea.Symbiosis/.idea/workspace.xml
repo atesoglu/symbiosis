@@ -12,78 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc9eacbf-6ecc-42f3-8a4c-578b55021c7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/API/Controllers/Users/RegisterUserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Events/Users/UserSignedInEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/RegisterUserCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/RegisterUserHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/RegisterUserValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Models/Authentication/AuthenticationObjectModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Services/Authentication/IAuthenticator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Services/Authentication/Authenticator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Symbiosis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/Controllers/@Base/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Controllers/@Base/ApiControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/Controllers/Authentication/AuthenticateUserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Controllers/Users/AuthenticateUserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/Controllers/Users/FindUserByEmailController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Controllers/Users/FindUserByEmailController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/HealthCheck/HealthChecksBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/HealthCheck/HealthCheckOptionsBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/Middlewares/ExceptionMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Middlewares/ExceptionMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/ApplicationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/ApplicationExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Events/@Base/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Events/@Base/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Events/@Base/EventBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Events/@Base/EventBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Events/User/UserSignedInEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Events/User/UserSignedOffEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Events/Users/UserSignedOffEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Events/User/UserSignedUpEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Events/Users/UserRegisteredEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/@Base/ExceptionBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/@Base/ExceptionBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/BadRequestException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/BadRequestException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/ConflictException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/ConflictException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/InternalServerException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/InternalServerException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/NotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/NotFoundException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/UnauthorizedException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/UnauthorizedException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/ValidationException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Exceptions/ValidationException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Authentication/Commands/AuthenticateUserValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Flows/Users/Queries/FindUserByEmailValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Models/@Base/ObjectModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Models/@Base/ObjectModelBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Models/Authentication/JwtSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Models/Authentication/JwtOptions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Models/UserObjectModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Models/UserObjectModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Persistence/IDataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Persistence/IDataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Request/IRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Request/IRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Request/IRequestBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Request/IRequestBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Request/IRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Request/IRequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Request/Request.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Request/Request.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Services/Authentication/ITokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Services/Authentication/ITokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Services/Cache/ICacheService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Services/Cache/ICacheService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Services/EventDispatcher/IEventDispatcherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Services/EventDispatcher/IEventDispatcherService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Models/@Base/ModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Models/@Base/ModelBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Models/UserModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/InfrastructureExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContextExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Persistence/InMemoryDataContextExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Response/AuthenticationResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Response/AuthenticationResponseModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Response/ErrorResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Response/ErrorResponseModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Response/HealthCheckResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Response/HealthCheckResponseModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Response/IErrorResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Response/IErrorResponseModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Response/IResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Response/IResponseModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Response/ResponseModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Response/ResponseModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Infrastructure/Services/Authentication/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Services/Authentication/TokenService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Services/EventDispatcher/EventDispatcherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Services/EventDispatcher/EventDispatcherService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/API.IntegrationTests/Controllers/FindUserByEmailControllerShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/Controllers/FindUserByEmailControllerShould.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/API.IntegrationTests/ServicesFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/API.IntegrationTests/ServicesFixture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.IntegrationTests/Services/EmptyEventDispatcherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/Services/EmptyEventDispatcherService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.IntegrationTests/ServicesFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.IntegrationTests/ServicesFixture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.UnitTests/Exceptions/BadRequestExceptionTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Exceptions/BadRequestExceptionTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.UnitTests/Exceptions/ValidationExceptionTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Exceptions/ValidationExceptionTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application.UnitTests/Models/UserObjectModelTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application.UnitTests/Models/UserObjectModelTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Domain.UnitTests/Models/UserModelTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Domain.UnitTests/Models/UserModelTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailCommandShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailCommandShould.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailHandlerShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailHandlerShould.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailValidatorShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/Flows/Flights/Queries/FindUserByEmailValidatorShould.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/ServicesFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Infrastructure.IntegrationTests/ServicesFixture.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,11 +31,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
@@ -216,6 +143,7 @@
       <workItem from="1647283302683" duration="113000" />
       <workItem from="1652957251744" duration="3662000" />
       <workItem from="1653030335731" duration="18576000" />
+      <workItem from="1653069345973" duration="2056000" />
     </task>
     <servers />
   </component>

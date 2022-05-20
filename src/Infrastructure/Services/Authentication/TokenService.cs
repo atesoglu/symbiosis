@@ -31,7 +31,7 @@ public class TokenService : ITokenService
             {
                 new Claim(ClaimTypes.Actor, user.UserId.ToString()),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString())
+                // new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString())
             },
             expires: expiresAtUtc.UtcDateTime,
             signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.Key)), SecurityAlgorithms.HmacSha256Signature))));
