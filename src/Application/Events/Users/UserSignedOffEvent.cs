@@ -2,7 +2,7 @@ using System.Text.Json;
 using Application.Events.Base;
 using Application.Models;
 
-namespace Application.Events.User;
+namespace Application.Events.Users;
 
 public class UserSignedOffEvent : Event<UserObjectModel>
 {

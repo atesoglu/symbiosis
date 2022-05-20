@@ -5,32 +5,31 @@ using Bogus;
 using FluentAssertions;
 using Xunit;
 
-namespace Application.UnitTests.Exceptions
+namespace Application.UnitTests.Exceptions;
+
+public class BadRequestExceptionTests
 {
-    public class BadRequestExceptionTests
+    [Fact]
+    public void ExtendsFromExceptionBase()
     {
-        [Fact]
-        public void ExtendsFromExceptionBase()
-        {
-            var actual = new BadRequestException();
-            actual.Should().BeAssignableTo<ExceptionBase>();
-        }
+        var actual = new BadRequestException();
+        actual.Should().BeAssignableTo<ExceptionBase>();
+    }
 
-        [Fact]
-        public void MessageMustMatch()
-        {
-            var faker = new Faker();
-            var sentence = faker.Lorem.Sentence();
+    [Fact]
+    public void MessageMustMatch()
+    {
+        var faker = new Faker();
+        var sentence = faker.Lorem.Sentence();
 
-            var actual = new BadRequestException(sentence);
-            actual.Message.Should().Be(sentence);
-        }
+        var actual = new BadRequestException(sentence);
+        actual.Message.Should().Be(sentence);
+    }
 
-        [Fact]
-        public void InnerExceptionMustMatch()
-        {
-            var actual = new BadRequestException(string.Empty, new ArgumentException("must-match"));
-            actual.InnerException.Should().BeOfType<ArgumentException>();
-        }
+    [Fact]
+    public void InnerExceptionMustMatch()
+    {
+        var actual = new BadRequestException(string.Empty, new ArgumentException("must-match"));
+        actual.InnerException.Should().BeOfType<ArgumentException>();
     }
 }

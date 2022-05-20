@@ -1,67 +1,66 @@
 ﻿using System.Collections.Generic;
 
-namespace Infrastructure.Response
+namespace Infrastructure.Response;
+
+/// <summary>
+/// Generic health-check response model to be serialized as json response to http requests.
+/// </summary>
+public class HealthCheckResponseModel
 {
     /// <summary>
-    /// Generic health-check response model to be serialized as json response to http requests.
+    /// Overall health status of the health-checks
     /// </summary>
-    public class HealthCheckResponseModel
-    {
-        /// <summary>
-        /// Overall health status of the health-checks
-        /// </summary>
-        public string Overall { get; set; }
-
-        /// <summary>
-        /// Total duration of the health-checks
-        /// </summary>
-        public string Duration { get; set; }
-
-        /// <summary>
-        /// Individual health-check entries.
-        /// </summary>
-        public ICollection<HealthCheckEntry> Entries { get; }
-
-        /// <summary>
-        /// Creates and new instance of HealthCheckResponseModel
-        /// </summary>
-        public HealthCheckResponseModel()
-        {
-            Entries = new List<HealthCheckEntry>();
-        }
-    }
+    public string Overall { get; set; } = null!;
 
     /// <summary>
-    /// Individual health-check entry.
+    /// Total duration of the health-checks
     /// </summary>
-    public class HealthCheckEntry
+    public string Duration { get; set; } = null!;
+
+    /// <summary>
+    /// Individual health-check entries.
+    /// </summary>
+    public ICollection<HealthCheckEntry> Entries { get; }
+
+    /// <summary>
+    /// Creates and new instance of HealthCheckResponseModel
+    /// </summary>
+    public HealthCheckResponseModel()
     {
-        /// <summary>
-        /// Health-check entry name.
-        /// </summary>
-        public string Name { get; }
+        Entries = new List<HealthCheckEntry>();
+    }
+}
 
-        /// <summary>
-        /// Health status of the check.
-        /// </summary>
-        public string Status { get; }
+/// <summary>
+/// Individual health-check entry.
+/// </summary>
+public class HealthCheckEntry
+{
+    /// <summary>
+    /// Health-check entry name.
+    /// </summary>
+    public string Name { get; }
 
-        /// <summary>
-        /// Duration of the individual health-check.
-        /// </summary>
-        public string Duration { get; }
+    /// <summary>
+    /// Health status of the check.
+    /// </summary>
+    public string Status { get; }
 
-        /// <summary>
-        /// Creates a new instance of HealthCheckEntry.
-        /// </summary>
-        /// <param name="name">Health-check entry name.</param>
-        /// <param name="status">Health status of the check.</param>
-        /// <param name="duration">Duration of the individual health-check.</param>
-        public HealthCheckEntry(string name, string status, string duration)
-        {
-            Name = name;
-            Status = status;
-            Duration = duration;
-        }
+    /// <summary>
+    /// Duration of the individual health-check.
+    /// </summary>
+    public string Duration { get; }
+
+    /// <summary>
+    /// Creates a new instance of HealthCheckEntry.
+    /// </summary>
+    /// <param name="name">Health-check entry name.</param>
+    /// <param name="status">Health status of the check.</param>
+    /// <param name="duration">Duration of the individual health-check.</param>
+    public HealthCheckEntry(string name, string status, string duration)
+    {
+        Name = name;
+        Status = status;
+        Duration = duration;
     }
 }

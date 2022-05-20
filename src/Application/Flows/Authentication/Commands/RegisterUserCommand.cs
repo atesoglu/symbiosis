@@ -1,11 +1,11 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using Application.Models;
 using Application.Models.Authentication;
 using Application.Request;
 
 namespace Application.Flows.Authentication.Commands;
 
-public class AuthenticateUserCommand : Request<AuthenticationObjectModel>
+public class RegisterUserCommand : Request<UserObjectModel>
 {
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;

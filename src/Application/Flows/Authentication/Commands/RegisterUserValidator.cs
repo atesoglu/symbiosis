@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace Application.Flows.Authentication.Commands;
 
-public class AuthenticateUserValidator : AbstractValidator<AuthenticateUserCommand>
+public class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
 {
-    public AuthenticateUserValidator()
+    public RegisterUserValidator()
     {
         RuleFor(t => t.Email)
             .NotEmpty().WithMessage("{PropertyName} is required.")

@@ -1,6 +1,5 @@
-﻿using Application.Events.User;
+﻿using Application.Events.Users;
 using Application.Exceptions;
-using Application.Flows.Users.Queries;
 using Application.Models;
 using Application.Models.Authentication;
 using Application.Persistence;
@@ -13,44 +12,56 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ValidationException = Application.Exceptions.ValidationException;
 
-namespace Application.Flows.Authentication.Commands
+namespace Application.Flows.Authentication.Commands;
+
+public class AuthenticateUserHandler : IRequestHandler<AuthenticateUserCommand, AuthenticationObjectModel>
 {
-    public class AuthenticateUserHandler : IRequestHandler<AuthenticateUserCommand, UserObjectModel>
+    private readonly IDataContext _repository;
+    private readonly IValidator<AuthenticateUserCommand> _validator;
+    private readonly IAuthenticator _authenticator;
+    private readonly ITokenService _tokenService;
+    private readonly JwtOptions _jwtOptions;
+    private readonly IEventDispatcherService _eventDispatcherService;
+    private readonly ILogger<AuthenticateUserHandler> _logger;
+
+    public AuthenticateUserHandler(IDataContext repository, IValidator<AuthenticateUserCommand> validator, IAuthenticator authenticator, ITokenService tokenService, IOptionsMonitor<JwtOptions> jwtSettings, IEventDispatcherService eventDispatcherService, ILogger<AuthenticateUserHandler> logger)
     {
-        private readonly IDataContext _repository;
-        private readonly IValidator<AuthenticateUserCommand> _validator;
-        private readonly ITokenService _tokenService;
-        private readonly JwtSettings _jwtSettings;
-        private readonly IEventDispatcherService _eventDispatcherService;
-        private readonly ILogger<AuthenticateUserHandler> _logger;
+        _repository = repository;
+        _validator = validator;
+        _authenticator = authenticator;
+        _tokenService = tokenService;
+        _jwtOptions = jwtSettings.CurrentValue;
+        _eventDispatcherService = eventDispatcherService;
+        _logger = logger;
+    }
 
-        public AuthenticateUserHandler(IDataContext repository, IValidator<AuthenticateUserCommand> validator, ITokenService tokenService, IOptionsMonitor<JwtSettings> jwtSettings, IEventDispatcherService eventDispatcherService, ILogger<AuthenticateUserHandler> logger)
+    public async Task<AuthenticationObjectModel> HandleAsync(AuthenticateUserCommand request, CancellationToken cancellationToken)
+    {
+        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+        if (!validationResult.IsValid) throw new ValidationException(validationResult.Errors);
+
+        var entity = await _repository.Users.Where(w => w.Email == request.Email).FirstOrDefaultAsync(cancellationToken);
+
+        if (entity == null)
+            throw new NotFoundException($"User cannot be found with the email: {request.Email}");
+
+        if (!await _authenticator.ValidatePasswordAsync(entity, request.Password, cancellationToken))
+            throw new BadRequestException("Incorrect password.");
+
+        var dto = new UserObjectModel(entity);
+
+        var (token, expiresAtUtc) = await _tokenService.BuildAsync(dto, cancellationToken);
+
+        var model = new AuthenticationObjectModel
         {
-            _repository = repository;
-            _validator = validator;
-            _tokenService = tokenService;
-            _jwtSettings = jwtSettings.CurrentValue;
-            _eventDispatcherService = eventDispatcherService;
-            _logger = logger;
-        }
+            Email = entity.Email,
+            AccessToken = token,
+            RefreshToken = Guid.NewGuid().ToString("N"),
+            ExpiresAt = expiresAtUtc
+        };
 
-        public async Task<UserObjectModel> HandleAsync(AuthenticateUserCommand request, CancellationToken cancellationToken)
-        {
-            var validationResult = await _validator.ValidateAsync(request, cancellationToken);
-            if (!validationResult.IsValid) throw new ValidationException(validationResult.Errors);
+        await _eventDispatcherService.Dispatch(new UserSignedInEvent(dto), cancellationToken);
 
-            var entity = await _repository.Users.Where(w => w.Email == request.Email).FirstOrDefaultAsync(cancellationToken);
-
-            if (entity == null)
-                throw new NotFoundException($"User can not be found with the email: {request.Email}");
-
-            var dto = new UserObjectModel(entity);
-
-            var token = _tokenService.BuildAsync(dto, cancellationToken);
-
-            await _eventDispatcherService.Dispatch(new UserSignedInEvent(dto), cancellationToken);
-
-            return dto;
-        }
+        return model;
     }
 }

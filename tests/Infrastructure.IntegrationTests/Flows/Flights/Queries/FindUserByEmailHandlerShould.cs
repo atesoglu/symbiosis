@@ -11,27 +11,26 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Xunit;
 
-namespace Infrastructure.IntegrationTests.Flows.Flights.Queries
+namespace Infrastructure.IntegrationTests.Flows.Flights.Queries;
+
+public class FindUserByEmailHandlerShould : IClassFixture<ServicesFixture>
 {
-    public class FindUserByEmailHandlerShould : IClassFixture<ServicesFixture>
+    private readonly IRequestHandler<FindUserByEmailCommand, UserObjectModel> _handler;
+
+    public FindUserByEmailHandlerShould(ServicesFixture fixture)
     {
-        private readonly IRequestHandler<FindUserByEmailCommand, UserObjectModel> _handler;
+        _handler = fixture.ServiceProvider.GetRequiredService<IRequestHandler<FindUserByEmailCommand, UserObjectModel>>();
+        fixture.ServiceProvider.GetRequiredService<IDataContext>().SeedData(fixture.ServiceProvider.GetRequiredService<ILogger<ServicesFixture>>());
+    }
 
-        public FindUserByEmailHandlerShould(ServicesFixture fixture)
+    [Fact]
+    public async Task NotFoundExceptionShouldBeThrownIfResourceIsNotFound()
+    {
+        var command = new FindUserByEmailCommand
         {
-            _handler = fixture.ServiceProvider.GetRequiredService<IRequestHandler<FindUserByEmailCommand, UserObjectModel>>();
-            fixture.ServiceProvider.GetRequiredService<IDataContext>().SeedData(fixture.ServiceProvider.GetRequiredService<ILogger<ServicesFixture>>());
-        }
+            Email = Guid.NewGuid().ToString("N") + "@email.com"
+        };
 
-        [Fact]
-        public async Task NotFoundExceptionShouldBeThrownIfResourceIsNotFound()
-        {
-            var command = new FindUserByEmailCommand
-            {
-                Email = Guid.NewGuid().ToString("N") + "@email.com"
-            };
-
-            await Assert.ThrowsAsync<NotFoundException>(() => _handler.HandleAsync(command, CancellationToken.None));
-        }
+        await Assert.ThrowsAsync<NotFoundException>(() => _handler.HandleAsync(command, CancellationToken.None));
     }
 }

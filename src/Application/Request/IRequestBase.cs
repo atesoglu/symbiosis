@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace Application.Request
+namespace Application.Request;
+
+/// <summary>
+/// Generic request base
+/// </summary>
+public interface IRequestBase
 {
-    /// <summary>
-    /// Generic request base
-    /// </summary>
-    public interface IRequestBase
-    {
-        DateTimeOffset RequestedAt { get; set; }
-    }
+    DateTimeOffset RequestedAt { get; set; }
 }

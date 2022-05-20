@@ -15,29 +15,28 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
-namespace API.IntegrationTests.Controllers
+namespace API.IntegrationTests.Controllers;
+
+public class FindUserByEmailControllerShould : IClassFixture<ServicesFixture>
 {
-    public class FindUserByEmailControllerShould : IClassFixture<ServicesFixture>
+    private readonly IRequestHandler<FindUserByEmailCommand, UserObjectModel> _handler;
+
+    public FindUserByEmailControllerShould(ServicesFixture fixture)
     {
-        private readonly IRequestHandler<FindUserByEmailCommand, UserObjectModel> _handler;
+        _handler = fixture.ServiceProvider.GetRequiredService<IRequestHandler<FindUserByEmailCommand, UserObjectModel>>();
+        fixture.ServiceProvider.GetRequiredService<IDataContext>().SeedData(fixture.ServiceProvider.GetRequiredService<ILogger<ServicesFixture>>());
+    }
 
-        public FindUserByEmailControllerShould(ServicesFixture fixture)
+    [Fact]
+    public async Task ResultShouldHavePropertyValueMatch()
+    {
+        var controller = new FindUserByEmailController(_handler, new NullLogger<ApiControllerBase>());
+
+        var command = new FindUserByEmailCommand
         {
-            _handler = fixture.ServiceProvider.GetRequiredService<IRequestHandler<FindUserByEmailCommand, UserObjectModel>>();
-            fixture.ServiceProvider.GetRequiredService<IDataContext>().SeedData(fixture.ServiceProvider.GetRequiredService<ILogger<ServicesFixture>>());
-        }
+            Email = Guid.NewGuid().ToString("N") + "@email.com"
+        };
 
-        [Fact]
-        public async Task ResultShouldHavePropertyValueMatch()
-        {
-            var controller = new FindUserByEmailController(_handler, new NullLogger<ApiControllerBase>());
-
-            var command = new FindUserByEmailCommand
-            {
-                Email = Guid.NewGuid().ToString("N") + "@email.com"
-            };
-
-            await Assert.ThrowsAsync<NotFoundException>(() => controller.FindUserByEmail(command, CancellationToken.None));
-        }
+        await Assert.ThrowsAsync<NotFoundException>(() => controller.FindUserByEmail(command, CancellationToken.None));
     }
 }

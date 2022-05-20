@@ -5,24 +5,23 @@ using Application.Services.EventDispatcher;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.IntegrationTests
+namespace Application.IntegrationTests;
+
+public class ServicesFixture
 {
-    public class ServicesFixture
+    public readonly ServiceProvider ServiceProvider;
+
+    public ServicesFixture()
     {
-        public readonly ServiceProvider ServiceProvider;
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile(path: "appSettings.Test.json", optional: false, reloadOnChange: true)
+            .Build();
 
-        public ServicesFixture()
-        {
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(path: "appSettings.Test.json", optional: false, reloadOnChange: true)
-                .Build();
-
-            ServiceProvider = new ServiceCollection()
-                .AddLogging()
-                .AddApplication(configuration)
-                .AddScoped<IEventDispatcherService, EmptyEventDispatcherService>()
-                .BuildServiceProvider();
-        }
+        ServiceProvider = new ServiceCollection()
+            .AddLogging()
+            .AddApplication(configuration)
+            .AddScoped<IEventDispatcherService, EmptyEventDispatcherService>()
+            .BuildServiceProvider();
     }
 }

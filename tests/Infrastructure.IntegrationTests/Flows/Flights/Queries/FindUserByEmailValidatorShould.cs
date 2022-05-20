@@ -4,39 +4,38 @@ using Bogus;
 using FluentAssertions;
 using Xunit;
 
-namespace Infrastructure.IntegrationTests.Flows.Flights.Queries
+namespace Infrastructure.IntegrationTests.Flows.Flights.Queries;
+
+public class FindUserByEmailValidatorShould
 {
-    public class FindUserByEmailValidatorShould
+    private readonly FindUserByEmailValidator _validator;
+
+    public FindUserByEmailValidatorShould()
     {
-        private readonly FindUserByEmailValidator _validator;
+        _validator = new FindUserByEmailValidator();
+    }
 
-        public FindUserByEmailValidatorShould()
-        {
-            _validator = new FindUserByEmailValidator();
-        }
+    [Fact]
+    public void NotAllowEmptyEmail()
+    {
+        var command = new Faker<FindUserByEmailCommand>()
+            .RuleFor(r => r.Email, f => f.Internet.Email())
+            .Generate();
 
-        [Fact]
-        public void NotAllowEmptyEmail()
-        {
-            var command = new Faker<FindUserByEmailCommand>()
-                .RuleFor(r => r.Email, f => f.Internet.Email())
-                .Generate();
+        command.Email = string.Empty;
 
-            command.Email = string.Empty;
+        _validator.Validate(command).IsValid.Should().BeFalse();
+    }
 
-            _validator.Validate(command).IsValid.Should().BeFalse();
-        }
+    [Fact]
+    public void NotAllowInvalidEmail()
+    {
+        var command = new Faker<FindUserByEmailCommand>()
+            .RuleFor(r => r.Email, f => f.Internet.Email())
+            .Generate();
 
-        [Fact]
-        public void NotAllowInvalidEmail()
-        {
-            var command = new Faker<FindUserByEmailCommand>()
-                .RuleFor(r => r.Email, f => f.Internet.Email())
-                .Generate();
+        command.Email = "email.com";
 
-            command.Email = "email.com";
-
-            _validator.Validate(command).IsValid.Should().BeFalse();
-        }
+        _validator.Validate(command).IsValid.Should().BeFalse();
     }
 }

@@ -1,14 +1,13 @@
 using FluentValidation;
 
-namespace Application.Flows.Users.Queries
+namespace Application.Flows.Users.Queries;
+
+public class FindUserByEmailValidator : AbstractValidator<FindUserByEmailCommand>
 {
-    public class FindUserByEmailValidator : AbstractValidator<FindUserByEmailCommand>
+    public FindUserByEmailValidator()
     {
-        public FindUserByEmailValidator()
-        {
-            RuleFor(t => t.Email)
-                .NotEmpty().WithMessage("{PropertyName} is required.")
-                .EmailAddress().WithMessage("{PropertyName} must be a valid email address. Current value is: {PropertyValue}.");
-        }
+        RuleFor(t => t.Email)
+            .NotEmpty().WithMessage("{PropertyName} is required.")
+            .EmailAddress().WithMessage("{PropertyName} must be a valid email address. Current value is: {PropertyValue}.");
     }
 }
